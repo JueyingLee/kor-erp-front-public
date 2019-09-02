@@ -37,7 +37,11 @@ or
 }
 ```
 
-## 2.거래처명  (select) [contrctCustomer]
+#### 1.5 Description
+
+year是查找后续的contractCustomer, season的关键数据。通过year查找到contractCustomer的一系列数据， 然后通过year和contractCustomer的值查询到season的数据。返回season 的时候，season的json数据中会给前端传一个id值，这个id值就是department和teamName以及itemName中所提到的contractID值。
+
+## 2.거래처명  (select) [contractCustomer]
 
 #### 2.1 url
 
