@@ -1,14 +1,14 @@
-# CurrentInventoryManagementPage API 
+# NotificationManagementPage API 
 
-### 1. CurrentInventoryManagementPage TableDataTitle Annotation Explanation Korean -> Chinese
+### 1. NotificationManagementPage NotificationDataGrid Annotation Explanation Korean -> Chinese
 
-사이즈: size
+공지사황: notification
 
-재고: inventory amount
+날짜: date
 
 폼목: itemName
 
-### 2. CurrentInventoryManagementPage Interfaecs
+### 2. NotificationManagementPage_NotificationDataGrid Interfaecs
 
 #### 2.1 url
 
@@ -20,11 +20,9 @@ get
 
 #### 2.3 Params
 
-| Param Name   | Param Type | Required | Value                                                   |
-| ------------ | ---------- | -------- | ------------------------------------------------------- |
-| datagridName | String     | True     | CurrentInventoryManagementPage_CurrentInventoryDataGrid |
-| contractID   | String     | True     | The 'id' value of selectedSeason                        |
-| itemName     | String     | True     | The 'itemName' value of selectedItemName                |
+| Param Name   | Param Type | Required | Value                                           |
+| ------------ | ---------- | -------- | ----------------------------------------------- |
+| datagridName | String     | True     | NotificationManagementPage_NotificationDataGrid |
 
 #### 2.4 Return Results Example
 
@@ -39,9 +37,10 @@ or
     status:true,
     results:[
     			{
-    				사이즈:'77L',
-    				재고:'209',
-                    폼목:'jacket'
+    				id:'1'
+                    title:'Company Meeting Date',
+    				createdDate:'2019-10-10',
+                    content:'........'
 				}
 			],
 	errrorMessage:''
