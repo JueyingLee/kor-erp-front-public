@@ -1,0 +1,524 @@
+<div class="as-management">
+    <div class="panel search">
+        <!-- form 1 -->
+        <div class="form1">
+            <form>
+                <label>
+					년도
+                    <div class="select-wrapper">
+                        <select name="year">
+							{% for year in years %}
+							 <option value="{{ year }}" {{ 'selected' if (year == selectedYear) else '' }}>{{ year}}</option>
+							{% endfor %}
+                        </select>
+                    </div>
+                </label>
+                <label>
+					거래처명
+                    <div class="select-wrapper">
+                        <select name="contractCustomer">
+							{% for contractCustomer in contractCustomers %}
+							<option value="{{ contractCustomer }}" {{ 'selected' if (contractCustomer == selectedContractCustomer) else '' }}>{{ contractCustomer }}</option>
+							{% endfor %}
+                        </select>
+                    </div>
+                </label>
+                <label class="wrap">
+					시즌
+                    <div class="select-wrapper">
+							<select name="season">
+								{% for season in seasons %}
+								<option value="{{ season|dump }}" {{ 'selected' if (season.id == selectedSeason.id) else '' }}>{{ season.text }}</option>
+								{% endfor %}
+							</select>
+                    </div>
+                </label>
+                <label>
+					부속명
+                    <div class="select-wrapper">
+                        <select name="departName">
+							{% for departName in departNames %}
+							<option value="{{ departName }}" {{ 'selected' if (departName == departName) else '' }}>{{ departName }}</option>
+							{% endfor %}
+                        </select>
+                    </div>
+                </label>
+                <label>
+					소속명
+                    <div class="select-wrapper">
+                        <select name="teamName">
+							{% for teamName in teamNames %}
+                            <option value="{{ teamName }}" {{ 'selected' if (teamName == teamName) else '' }}>{{ teamName }}</option>
+							{% endfor %}
+                        </select>
+                    </div>
+                </label>
+                <label>
+                    <input placeholder="성명" type="text" name="" value="성명"/>
+                </label>
+                <button id="search" type="button">검색</button>
+            </form>
+        </div>
+        <!-- form 3 -->
+        <div id="AsManagementPage_CustomerAddressChargePersonInfo" class="form2">
+            <form>
+                <label>
+                    담당자명
+                    <input placeholder="김자연" type="text" name="" value=""/>
+                </label>
+                <label class="wrap">
+                    담당자연락처
+                    <input placeholder="033-580-4577" type="text" name="" value=""/>
+                </label>
+                <label>
+                    초도배송지
+                    <input placeholder="033-580-4577" type="text" name="" value=""/>
+                </label>
+                <button id="" type="button">저장</button>
+            </form>
+        </div>
+
+        <!-- form 4 -->
+        <div id="AsManagementPage_CustomPersonalSelectDataGrid" class="form4">
+            <label>
+                거래처명
+                <div class="select-wrapper">
+                    <select>
+                        <option value="">거래처명</option>
+                        <option value="">거래처명</option>
+                    </select>
+                </div>
+            </label>
+            <label class="wrap">
+                부서명
+                <div class="select-wrapper">
+                    <select>
+                        <option value="">부서명</option>
+                        <option value="">부서명</option>
+                    </select>
+                </div>
+            </label>
+            <label>
+                소속부서
+                <div class="select-wrapper">
+                    <select>
+                        <option value="">소속부서</option>
+                        <option value="">소속부서</option>
+                    </select>
+                </div>
+            </label>
+            <label class="wrap">
+                성별
+                <div class="select-wrapper">
+                    <select>
+                        <option value="">성별</option>
+                        <option value="">성별</option>
+                    </select>
+                </div>
+            </label>
+            <label>
+                성명
+                <input placeholder="윤형태" type="text" name="" value=""/>
+            </label>
+            <label class="wrap">
+                사원번호
+                <input placeholder="201321" type="text" name="" value=""/>
+            </label>
+            <label>
+                핸드폰
+                <input placeholder="010-9676-2368" type="text" name="" value=""/>
+            </label>
+            <button id="button4" type="button">저장</button>
+        </div>
+		<!-- form 3 -->
+        <div class="form3">
+            <label>
+                포장순
+                <input type="text" name="" value=""/>
+            </label>
+            <label class="wrap">
+                신청년
+                <i class="date-picker" id="date1" ></i>
+            </label>
+            <label>
+                신규신청일
+                <i class="date-picker" id="date2" ></i>
+            </label>
+            <label class="wrap">
+                신규입력자
+                <input type="text" name="" value=""/>
+            </label>
+            <label>
+                신규송장일
+                <i class="date-picker" id="date3" ></i>
+            </label>
+            <label class="wrap">
+                신규포장일
+                <i class="date-picker" id="date4" ></i>
+            </label>
+            <label>
+                신규송장번호
+                <input type="text" name="" value=""/>
+            </label>
+            <button id="button3" type="button">자장</button>
+        </div>
+        <div class="search-table" id="table1"></div>
+    </div>
+	<!--form 5-->
+    <div class="panel exchange" id="교환"  style="overflow:scroll">
+        <div id="firstExchange" class="sub-exchange">
+			<h3>1차교환</h3>
+			<div>
+				<label>
+					회수일
+					<i class="date-picker" id="date5" ></i>
+				</label>
+			</div>
+			<div>
+				<label>
+					교환종류
+					<div class="select-wrapper">
+						<select>
+							<option value="">소속부서1</option>
+							<option value="">소속부서2</option>
+							<option value="">소속부서3</option>
+						</select>
+					</div>
+				</label>
+			</div>
+			<div>
+				<label>
+					회수입력자
+					<div class="select-wrapper">
+						<select>
+							<option value="">소속부서1</option>
+							<option value="">소속부서2</option>
+							<option value="">소속부서3</option>
+						</select>
+					</div>
+				</label>
+			</div>
+			<div>
+				<label>
+					교환포장일
+					<i class="date-picker" id="date6" ></i>
+				</label>
+			</div>
+			<div>
+				<label>
+					교환송장일
+					<i class="date-picker" id="date7" ></i>
+				</label>
+			</div>
+			<div>
+				<label>
+					교환송장번호
+					<div class="select-wrapper">
+						<select>
+							<option value="">소속부서1</option>
+							<option value="">소속부서2</option>
+							<option value="">소속부서3</option>
+						</select>
+					</div>
+				</label>
+			</div>
+			<div>
+				<label>
+					미회수분현황
+					<label>예</label>
+					<label>아니요</label>
+				</label>
+			</div>
+            <div class="add-table">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th></th>
+                        <th colspan="2">회수 내역</th>
+                        <th colspan="3">교환 내역</th>
+                    </tr>
+                    <tr>
+                        <td>자켓</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>가디건</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>블라우스</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>치마</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+				<button id="add-table-addBtn-I">추가</button>
+				<button id="add-table-removeBtn-I">삭제</button>
+            </div>
+			<div class="sub-sub-exchange">
+				<h3>회수비교</h3>
+				<input placeholder="내용을 넣어주세요.."/>
+				<h3>교환 메세지</h3>
+				<input placeholder="내용을 넣어주세요.."/>
+			</div>
+			<div class="sub-sub-exchange">
+				<h3>전화통화일</h3>
+				<i class="date-picker" id="date14"></i>
+				<h3>전화통화자명				
+				</h3>
+				<input placeholder=""/>
+				<h3>전화 내용</h3>
+				<input placeholder="내용을 넣어주세요.."/>
+			</div>
+        </div>
+        <div id="secondExchange" class="sub-exchange">
+			<h3>2차교환</h3>
+			<div>
+				<label>
+					회수일
+					<i class="date-picker" id="date8" ></i>
+				</label>
+			</div>
+			<div>
+				<label>
+					교환종류
+					<div class="select-wrapper">
+						<select>
+							<option value="">소속부서1</option>
+							<option value="">소속부서2</option>
+							<option value="">소속부서3</option>
+						</select>
+					</div>
+				</label>
+			</div>
+			<div>
+				<label class="wrap">
+					회수입력자
+					<div class="select-wrapper">
+						<select>
+							<option value="">소속부서1</option>
+							<option value="">소속부서2</option>
+							<option value="">소속부서3</option>
+						</select>
+					</div>
+				</label>
+			</div>
+			<div>
+				<label>
+					교환포장일
+					<i class="date-picker" id="date9" ></i>
+				</label>
+			</div>
+			<div>
+				<label>
+					교환송장일
+					<i class="date-picker" id="date10" ></i>
+				</label>
+			</div>
+			<div>
+				<label class="wrap">
+					교환송장번호
+					<div class="select-wrapper">
+						<select>
+							<option value="">소속부서1</option>
+							<option value="">소속부서2</option>
+							<option value="">소속부서3</option>
+						</select>
+					</div>
+				</label>
+			</div>
+			<div>
+				<label class="wrap">
+					미회수분현황
+					<label>예</label>
+					<label>아니요</label>
+				</label>
+			</div>
+            <div class="add-table">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th></th>
+                        <th colspan="2">회수 내역</th>
+                        <th colspan="3">교환 내역</th>
+                    </tr>
+                    <tr>
+                        <td>자켓</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>가디건</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>블라우스</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>치마</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+				<button id="add-table-addBtn-II">추가</button>
+				<button id="add-table-removeBtn-II">삭제</button>
+            </div>
+			<div class="sub-sub-exchange">
+				<h3>회수비교</h3>
+				<input placeholder="내용을 넣어주세요.."/>
+				<h3>교환 메세지</h3>
+				<input placeholder="내용을 넣어주세요.."/>
+			</div>
+			<div class="sub-sub-exchange">
+				<h3>전화통화일</h3>
+				<i class="date-picker" id="date15"></i>
+				<h3>전화통화자명				
+				</h3>
+				<input placeholder=""/>
+				<h3>전화 내용</h3>
+				<input placeholder="내용을 넣어주세요.."/>
+			</div>
+        </div>
+        <div id="thirdExchange" class="sub-exchange">
+			<h3>3차교환</h3>
+			<div>
+				<label>
+					회수일
+					<i class="date-picker" id="date11" ></i>
+				</label>
+			</div>
+			<div>
+				<label>
+					교환종류
+					<div class="select-wrapper">
+						<select>
+							<option value="">소속부서1</option>
+							<option value="">소속부서2</option>
+							<option value="">소속부서3</option>
+						</select>
+					</div>
+				</label>
+			</div>
+			<div>
+				<label class="wrap">
+					회수입력자
+					<div class="select-wrapper">
+						<select>
+							<option value="">소속부서1</option>
+							<option value="">소속부서2</option>
+							<option value="">소속부서3</option>
+						</select>
+					</div>
+				</label>
+			</div>
+			<div>
+				<label>
+					교환포장일
+					<i class="date-picker" id="date12" ></i>
+				</label>
+			</div>
+			<div>
+				<label>
+					교환송장일
+					<i class="date-picker" id="date13" ></i>
+				</label>
+			</div>
+			<div>
+				<label class="wrap">
+					교환송장번호
+					<div class="select-wrapper">
+						<select>
+							<option value="">소속부서1</option>
+							<option value="">소속부서2</option>
+							<option value="">소속부서3</option>
+						</select>
+					</div>
+				</label>
+			</div>
+			<div>
+				<label class="wrap">
+					미회수분현황
+					<label>예</label>
+					<label>아니요</label>
+				</label>
+			</div>
+            <div class="add-table">
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th></th>
+                        <th colspan="2">회수 내역</th>
+                        <th colspan="3">교환 내역</th>
+                    </tr>
+                    <tr>
+                        <td>자켓</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>가디건</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>블라우스</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>치마</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+				<button id="add-table-addBtn-III">추가</button>
+				<button id="add-table-removeBtn-III">삭제</button>
+            </div>
+			<div class="sub-sub-exchange">
+				<h3>회수비교</h3>
+				<input placeholder="내용을 넣어주세요.."/>
+				<h3>교환 메세지</h3>
+				<input placeholder="내용을 넣어주세요.."/>
+			</div>
+			<div class="sub-sub-exchange">
+				<h3>전화통화일</h3>
+				<i class="date-picker" id="date16"></i>
+				<h3>전화통화자명				
+				</h3>
+				<input placeholder=""/>
+				<h3>전화 내용</h3>
+				<input placeholder="내용을 넣어주세요.."/>
+			</div>
+        </div>		
+    </div>
+</div>
